@@ -1,0 +1,24 @@
+{
+  "name": "2014.bpbusinessawards.co.uk",
+  "version": "0.0.0",
+  "homepage": "http://www.bpbusinessawards.co.uk/2014/",
+  "authors": [
+    "Trinity Mirror Creative"
+  ],
+  "description": "",
+  "license": "n/a",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5shiv": "html5shiv#3.7.0",
+    "possession": "https://github.com/michaelbragg/possession.git#develop",
+    "respondJS": "1.4.x",
+    "jquery": "1.11.x"
+  }
+}

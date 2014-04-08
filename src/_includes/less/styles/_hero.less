@@ -1,0 +1,45 @@
+/**
+ * Hero
+ */
+
+.hero {
+  border-bottom: 12px solid @brand--green;
+  background-color: #040301;
+}
+
+.hero__content {
+  position: relative;
+}
+
+.hero__copy {
+  //position: absolute;
+}
+
+  .hero__copy .btn {
+    margin-bottom: 29px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    box-shadow: none;
+  }
+
+@media screen and (min-width: 769px) {
+
+  .hero {
+    border-bottom-color: @brand--green-dark;
+  }
+
+  .hero__copy {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+    .hero__copy .btn {
+      margin-bottom: 0;
+      border-top-right-radius: 7.25px;
+      border-top-left-radius: 7.25px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+}

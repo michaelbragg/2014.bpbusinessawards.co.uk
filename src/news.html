@@ -1,0 +1,35 @@
+---
+layout: columns-two
+stylesheet:
+class: page__news
+
+title: News
+permalink: news/
+meta:
+  keywords:
+  description:
+  author:
+
+hero:
+  image: hero_2013-winners.jpg
+  alt:
+  copy: 2013 Winners
+  link: #
+
+sponsors: true
+---
+
+
+{% for post in site.posts limit:5 %}
+  <article>
+
+    <h1 class="gamma heading--main">{{ post.title }}</h1>
+
+    <img class="image image__responsive" src="{{ site.media }}/news/{{ post.images.main }}" alt="">
+
+    {{ post.excerpt }}
+
+    <p><a class="btn" href="{{ post.url }}">Read More</a></p>
+
+  </article>
+{% endfor %}

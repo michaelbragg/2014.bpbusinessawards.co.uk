@@ -1,0 +1,72 @@
+{% if page.sponsors == true %}
+  {% include templates/sponsors.html %}
+{% endif %}
+
+<section class="footer__sub wrapper cf">
+
+    <div class="wrapper__sub">
+
+    <div class="grid ss1-ss4 ms1-ms2 ls1">
+      <h4>Site Map</h4>
+      <ul class="footer__sub--links list">
+        <li>
+          <a href="{{ site.url }}/">Home</a>
+        </li>
+        {% include templates/navigation.html %}
+      </ul>
+    </div>
+
+    <div class="grid grid__seperator--dark ss1-ss4 ms3-ms4 ls2">
+      <h4>Birmingham Post</h4>
+      <ul class="footer__sub--links list">
+        <li><a href="http://www.birminghampost.co.uk/business/">Business</a></li>
+        <li><a href="http://www.birminghampost.co.uk/leads-deals/">Leads &amp; Deals</a></li>
+        <li><a href="http://www.birminghampost.co.uk/business/finance/">Finance</a></li>
+        <li><a href="http://www.birminghampost.co.uk/business/manufacturing/">Manufacturing</a></li>
+        <li><a href="http://www.birminghampost.co.uk/business/legal/">Legal</a></li>
+        <li><a href="http://www.birminghampost.co.uk/business/creative/">Creative</a></li>
+        <li><a href="http://www.birminghampost.co.uk/business/business-opinion/">Opinion</a></li>
+        <li><a href="http://www.birminghampost.co.uk/business/commercial-property/">Commercial Property</a></li>
+      </ul>
+    </div>
+
+    <div class="grid grid__seperator--dark ss1-ss4 ms5-ms6 ls3">
+      <h4>Events Sites</h4>
+      <ul class="footer__sub--links list">
+        <li>
+          <a href="#">Link 1</a>
+        </li>
+        <li>
+          <a href="#">Link 2</a>
+        </li>
+        <li>
+          <a href="#">Link 3</a>
+        </li>
+        <li>
+          <a href="#">Link 4</a>
+        </li>
+        <li>
+          <a href="#">Link 5</a>
+        </li>
+        <li>
+          <a href="#">Link 6</a>
+        </li>
+        <li>
+          <a href="#">Link 7</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer__main wrapper cf">
+  <div class="wrapper__sub">
+
+    <p class="copyright grid ss1-4 ls1-ls4">&copy; 2014 Trinity Mirror Midlands. All rights reserved. <a href="{{ site.url }}/terms-of-entry/">Terms&nbsp;of&nbsp;Entry</a> | <a href="{{ site.url }}/terms-conditions/">Terms&nbsp;&amp;&nbsp;Conditions</a></p>
+
+  </div>
+
+</footer>

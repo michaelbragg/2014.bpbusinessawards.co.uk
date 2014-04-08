@@ -1,0 +1,36 @@
+<header class="header__main fixed cf">
+  <div class="wrapper__sub">
+
+    <a class="header__brand header__left" href="{{ site.url }}/">
+      <img class="image__responsive" src="{{ site.static }}/gui/logo_business-awards-2014_birmingham-Post.png" alt="2014 Birmingham Post Business Awards">
+    </a>
+
+    <nav role="navigation" class="nav__main">
+
+      <button role="hidden" id="js-menu__icon" class="navicon navicon__right ls-hidden">Menu</button>
+
+      <ul id="js-nav__main" class="nav__main__right list menu">
+      {% include templates/navigation.html %}
+      </ul>
+
+    </nav>
+
+  </div>
+</header>
+
+{% if page.hero %}
+<section class="hero wrapper box">
+
+    <div class="hero__content wrapper__sub">
+    {% if page.hero.image %}
+    <img class="image__responsive" src="{{ site.media }}/hero/{{ page.hero.image }}" alt="{{ page.hero.alt }}">
+    {% endif %}
+    {% if page.hero.copy %}
+    <div class="hero__copy grid ss1-ss4 ls1">
+      <a class="btn btn__large btn--primary" href="{{ site.url }}/{{ page.hero.link}}">{{ page.hero.copy }}</a>
+    </div>
+    {% endif %}
+    </div>
+
+</section>
+{% endif %}

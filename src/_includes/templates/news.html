@@ -1,0 +1,24 @@
+<article class="box separator--horizontal">
+  <h3 class="gamma heading--main">Awards Ceremony</h3>
+
+  <img class="image image__responsive" src="{{ site.media }}/news/preview_2013-event.jpg" alt="">
+
+  <p>TBC</p>
+
+  <p>
+    <a class="btn btn--primary btn__full" href="{{ post.url }}/book-a-table/">Book your table now</a>
+  </p>
+
+</article>
+
+
+{% for post in site.posts limit:3 %}
+<article class="box separator--horizontal">
+  <h4 class="gamma heading--main">{{ post.title }}</h4>
+  <img class="image image__responsive" src="{{ site.media }}/news/{{ post.images.preview }}" alt="">
+  <p>{{ post.description }}</p>
+  <p>
+    <a class="btn btn__full" href="{{ post.url }}">Read More</a>
+  </p>
+</article>
+{% endfor %}
