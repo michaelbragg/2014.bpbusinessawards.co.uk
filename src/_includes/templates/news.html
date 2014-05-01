@@ -6,7 +6,7 @@
   <p>TBC</p>
 
   <p>
-    <a class="btn btn--primary btn__full" href="{{ post.url }}/book-a-table/">Book your table now</a>
+    <a class="btn btn--primary btn__full" href="{{ site.url }}/book-a-table/">Book your table now</a>
   </p>
 
 </article>
@@ -18,7 +18,7 @@
   <img class="image image__responsive" src="{{ site.media }}/news/{{ post.images.preview }}" alt="">
   <p>{{ post.description }}</p>
   <p>
-    <a class="btn btn__full" href="{{ post.url }}">Read More</a>
+    <a class="btn btn__full" href="{{ site.url }}{{ post.url }}">Read More</a>
   </p>
 </article>
 {% endfor %}
