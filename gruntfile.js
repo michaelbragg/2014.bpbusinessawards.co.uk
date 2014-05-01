@@ -241,5 +241,5 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
   grunt.registerTask('stage', ['config:stage', 'clean', 'less', 'shell:jekyll_stage', 'copy', 'optim', 'shell:open']);
-  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', 'modernizr', 'optim', 'shell:open']);
+  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim', 'shell:open']);
 };
