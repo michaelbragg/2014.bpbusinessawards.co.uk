@@ -64,9 +64,9 @@
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 {% endif %}
 {% if page.description %}
-  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:description" content="{{ page.meta.description }}">
 {% else %}
-  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:description" content="{{ site.meta.description }}">
 {% endif %}
 {% if page.image %}
   <meta name="twitter:image:src" content="{{ site.url }}/path/to/image/{{ page.image }}">
