@@ -3,8 +3,10 @@
 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 <meta content="en-gb" http-equiv="Content-Language" />
-{% if page.meta.keywords %}<meta name="keywords" content="{{ page.meta.keywords }}" />{% endif %}
-{% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}" />{% endif %}
+{% if page.meta.keywords %}
+<meta name="keywords" content="{% for keyword in page.meta.keywords %}
+{{ keyword }}, {% endfor %}">{% elsif site.meta.keywords %}<meta name="keywords" content="{% for keyword in site.meta.keywords %}{{ keyword }}, {% endfor %}">{% endif %}
+{% if page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% elsif site.meta.description %}<meta name="description" content="{{ site.meta.description }}">{% endif %}
 {% if page.meta.author %}<meta name="author" content="{{ page.meta.author }}" />{% endif %}
 
 <!--  Open Graph  -->
@@ -20,9 +22,9 @@
   <meta content="website" property="og:type">
 {% endif %}
 {% if page.description %}
-  <meta content="{{ page.description }}" property="og:description">
+  <meta content="{{ page.meta.description }}" property="og:description">
 {% else %}
-  <meta content="{{ site.description }}" property="og:description">
+  <meta content="{{ site.meta.description }}" property="og:description">
 {% endif %}
 {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
