@@ -27,3 +27,22 @@ media: /media
 ## Analytics
 
 google_analytics_id:
+
+## Meta
+
+meta:
+  author: author
+  description: "The Birmingham Post is celebrating the resilience and fortitude of business and industries in Birmingham, West Midlands. Nominate your business for a award."
+  keywords:
+    - "birmingham post business awards"
+    - "midlands business awards"
+    - "industry awards"
+    - awards
+    - nominate
+    - birmingham
+    - "birmingham business"
+    - "busniss awards"
+    - "business startup"
+    - "small business"
+    - "sponsor awards"
+    - "increase publicity"

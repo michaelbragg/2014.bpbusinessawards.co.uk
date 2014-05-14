@@ -20,10 +20,29 @@ rdiscount:
 
 name: Birmingham Post Business Awards 2014
 
-url: /beta
-static: /beta/static
-media: /beta/media
+url: http://www.bpbusinessawards.co.uk/beta
+static: http://www.bpbusinessawards.co.uk/beta/static
+media: http://www.bpbusinessawards.co.uk/beta/media
 
 ## Analytics
 
 google_analytics_id:
+
+## Meta
+
+meta:
+  author: author
+  description: "The Birmingham Post is celebrating the resilience and fortitude of business and industries in Birmingham, West Midlands. Nominate your business for a award."
+  keywords:
+    - "birmingham post business awards"
+    - "midlands business awards"
+    - "industry awards"
+    - awards
+    - nominate
+    - birmingham
+    - "birmingham business"
+    - "busniss awards"
+    - "business startup"
+    - "small business"
+    - "sponsor awards"
+    - "increase publicity"
