@@ -33,6 +33,7 @@
     "grunt-contrib-copy": "0.5.x",
     "grunt-notify": "0.2.x",
     "grunt-autoprefixer": "0.7.x",
-    "grunt-modernizr": "0.5.x"
+    "grunt-modernizr": "0.5.x",
+    "grunt-contrib-imagemin": "0.7.x"
   }
 }

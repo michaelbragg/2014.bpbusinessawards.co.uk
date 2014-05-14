@@ -90,6 +90,15 @@ module.exports = function(grunt) {
         'src/static/css/global.css': ['src/_includes/less/global.less']
         }
       }
+     ,production: {
+        options: {
+        compress: true
+       ,paths: ['src/static/css']
+        }
+       ,files: {
+        'src/static/css/global.css': ['src/_includes/less/global.less']
+        }
+      }
     }
 
   // Validate
@@ -189,13 +198,13 @@ module.exports = function(grunt) {
       files: [{
         expand: true,
         cwd: 'src/static/gui',
-        src: ['**/*.{png,jpg,gif}'],
+        src: ['**/*.{png,jpg,gif,svg}'],
         dest: '<%= grunt.config.get("dest") %>/static/gui'
       },
       {
         expand: true,
         cwd: 'src/media',
-        src: ['**/*.{png,jpg,gif}'],
+        src: ['**/*.{png,jpg,gif,svg}'],
         dest: '<%= grunt.config.get("dest") %>/static/media'
       }]
     }
@@ -238,8 +247,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['dev', 'serve']);
   grunt.registerTask('test', ['htmlhint', 'csslint', 'jshint']);
   grunt.registerTask('optim', ['imagemin']);
-  grunt.registerTask('dev', ['config:dev', 'clean', 'less', 'shell:jekyll_dev', 'copy']);
+  grunt.registerTask('dev', ['config:dev', 'clean', 'less:development', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:stage', 'clean', 'less', 'shell:jekyll_stage', 'copy', 'optim', 'shell:open']);
-  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim', 'shell:open']);
+  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'optim', 'shell:open']);
+  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim', 'shell:open']);
 };
