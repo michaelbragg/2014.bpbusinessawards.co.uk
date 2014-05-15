@@ -249,6 +249,6 @@ module.exports = function(grunt) {
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less:development', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'optim', 'shell:open']);
-  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim', 'shell:open']);
+  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'optim']);
+  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim']);
 };
