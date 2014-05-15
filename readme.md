@@ -18,8 +18,8 @@ Website to support the 2014 Birmingham Post Business Awards
 ### Setup Development Area
 
 ```
+bundle install
 npm install
-gem install jekyll
 npm install bower
 bower install
 ```
