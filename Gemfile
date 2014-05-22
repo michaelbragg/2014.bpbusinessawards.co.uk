@@ -1,2 +1,3 @@
 source 'https://rubygems.org'
-gem 'jekyll'
+gem 'jekyll', '1.3.1'
+gem 'rdiscount'
