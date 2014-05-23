@@ -245,7 +245,7 @@ module.exports = function(grunt) {
   // Options
 
   grunt.registerTask('default', ['dev', 'serve']);
-  grunt.registerTask('test', ['htmlhint', 'csslint', 'jshint']);
+  grunt.registerTask('test', ['config:dev', 'htmlhint', 'csslint', 'jshint']);
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less:development', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
