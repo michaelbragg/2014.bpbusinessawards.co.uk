@@ -10,7 +10,7 @@ relative_permalinks: false
 
 timezone: Europe/London
 
-future: false
+future: true
 lsi: false
 pygments: false
 markdown: rdiscount
