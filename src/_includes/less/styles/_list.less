@@ -13,9 +13,19 @@
 }
 
 .category-item {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
   border-bottom: 1px solid @brand--grey;
 }
+
+  .category-item:first-child {
+    padding-top: 1.5em;
+  }
+
+  .category-item .category-item__title {
+    padding-top: 0.25em;
+    padding-left: 0.5em
+  }
 
 @media screen and (min-width: 481px) {
 
