@@ -68,9 +68,8 @@ module.exports = function(grunt) {
    ,copy: {
       bower: {
         files: [
-          { expand: true, flatten: true, cwd: 'bower_components', src: ['html5shiv/dist/html5shiv.js'], dest: '<%= grunt.config.get("dest") %>/static/js/lib'},
-          { expand: true, flatten: true, cwd: 'bower_components', src: ['jquery/dist/jquery.min.js'], dest: '<%= grunt.config.get("dest") %>/static/js/lib'},
-          { expand: true, flatten: true, cwd: 'bower_components', src: ['respondJS/dest/respond.min.js'], dest: '<%= grunt.config.get("dest") %>/static/js/lib'}
+          { expand: true, flatten: true, cwd: 'src/_includes/bower_components', src: ['html5shiv/dist/html5shiv.js'], dest: '<%= grunt.config.get("dest") %>/static/js/lib'},
+          { expand: true, flatten: true, cwd: 'src/_includes/bower_components', src: ['respondJS/dest/respond.min.js'], dest: '<%= grunt.config.get("dest") %>/static/js/lib'}
         ]
       }
     }
@@ -87,7 +86,8 @@ module.exports = function(grunt) {
         paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.css': ['src/_includes/less/global.less']
+        'src/static/css/global.css': ['src/_includes/less/global.less'],
+        'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
      ,production: {
@@ -96,7 +96,8 @@ module.exports = function(grunt) {
        ,paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.css': ['src/_includes/less/global.less']
+        'src/static/css/global.css': ['src/_includes/less/global.less'],
+        'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
     }
@@ -210,18 +211,6 @@ module.exports = function(grunt) {
     }
   }
 
-  // Deploy
-
-  ,'gh-pages': {
-    options: {
-      base: '<%= grunt.config.get("dest") %>',
-      branch: 'gh-pages',
-      add: true,
-      push: true
-    },
-    src: ['**/*', '!gruntfile.js', '!package.json', '!readme.md', '!_config.yml' ]
-  }
-
   });
 
   // Tasks
@@ -235,7 +224,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-config');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-notify');
@@ -245,7 +233,7 @@ module.exports = function(grunt) {
   // Options
 
   grunt.registerTask('default', ['dev', 'serve']);
-  grunt.registerTask('test', ['htmlhint', 'csslint', 'jshint']);
+  grunt.registerTask('test', ['config:dev', 'htmlhint', 'csslint', 'jshint']);
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less:development', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
