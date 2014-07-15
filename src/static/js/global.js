@@ -1,5 +1,8 @@
 ---
 ---
+
+{% include bower_components/jquery/dist/jquery.min.js %}
+
 /**
  * Responsive Navigation
  */
@@ -23,3 +26,5 @@
   });
 
 }(jQuery));
+
+{% include js/jquery.svgfallback.js %}

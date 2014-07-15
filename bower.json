@@ -18,7 +18,7 @@
   "dependencies": {
     "html5shiv": "html5shiv#3.7.0",
     "possession": "https://github.com/michaelbragg/possession.git#develop",
-    "respondJS": "1.4.x",
-    "jquery": "1.11.x"
+    "jquery": "1.11.0",
+    "respondJS": "1.4.2"
   }
 }
