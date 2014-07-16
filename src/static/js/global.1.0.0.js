@@ -21,7 +21,7 @@
         $("head").append($("<link rel='stylesheet' href='"+src+"' media='screen' >"));
     }
 
-    loadStyleSheet('{{ site.url }}/static/css/global.css');
+    loadStyleSheet('{{ site.url }}/static/css/global.1.0.0.css');
 
   });
 
