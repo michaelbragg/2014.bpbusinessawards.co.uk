@@ -21,10 +21,12 @@
         $("head").append($("<link rel='stylesheet' href='"+src+"' media='screen' >"));
     }
 
-    loadStyleSheet('{{ site.url }}/static/css/global.1.0.0.css');
+    loadStyleSheet('{{ site.url }}/static/css/global.1.1.0.css');
 
   });
 
 }(jQuery));
 
 {% include js/jquery.svgfallback.js %}
+
+{% include bower_components/FitVids/jquery.fitvids.js %}
