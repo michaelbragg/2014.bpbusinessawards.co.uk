@@ -15,14 +15,6 @@
       $("#js-nav__main").toggleClass("is-active");
     });
 
-
-    function loadStyleSheet(src){
-
-        $("head").append($("<link rel='stylesheet' href='"+src+"' media='screen' >"));
-    }
-
-    loadStyleSheet('{{ site.url }}/static/css/global.1.1.0.css');
-
   });
 
 }(jQuery));
