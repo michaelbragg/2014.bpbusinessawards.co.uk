@@ -25,3 +25,26 @@
 aside .image {
   margin-bottom: 1em;
 }
+
+/**
+ * Responsive Videos
+ */
+
+.video__responsive {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.video__responsive video,
+.video__responsive canvas {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.video__responsive video {
+  height: 100%;
+  position: absolute;
+}

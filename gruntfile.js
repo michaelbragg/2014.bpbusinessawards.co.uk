@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.css': ['src/_includes/less/global.less'],
+        'src/static/css/global.1.2.1.css': ['src/_includes/less/global.less'],
         'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
        ,paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.css': ['src/_includes/less/global.less'],
+        'src/static/css/global.1.2.1.css': ['src/_includes/less/global.less'],
         'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }

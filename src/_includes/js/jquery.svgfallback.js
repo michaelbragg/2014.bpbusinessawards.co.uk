@@ -1,2 +1,2 @@
 /*! SVG Fallback for unsupported browsers */
-if(!Modernizr.svg){var imgs=$('img[data-fallback]');imgs.attr('src',imgs.data('fallback'));}
+if(!Modernizr.svg){$('img').each(function(){$(this).attr('src',$(this).data('fallback'));});}
