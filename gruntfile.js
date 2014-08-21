@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.1.3.0.css': ['src/_includes/less/global.less'],
+        'src/static/css/global.css': ['src/_includes/less/global.less'],
         'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
        ,paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.1.3.0.css': ['src/_includes/less/global.less'],
+        'src/static/css/global.css': ['src/_includes/less/global.less'],
         'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
@@ -152,7 +152,7 @@ module.exports = function(grunt) {
           jQuery: true
         }
       },
-      src: ['gruntfile.js', '<%= grunt.config.get("dest") %>/static/js/*.js']
+      src: ['gruntfile.js', 'src/_includes/js/*.js']
     }
 
   // Optimise
@@ -211,6 +211,26 @@ module.exports = function(grunt) {
     }
   }
 
+   ,hashres: {
+      options: {
+        encoding: 'utf8',
+        fileNameFormat: '${name}.${hash}.${ext}',
+        renameFiles: true
+      },
+      image: {
+        src: ['<%= grunt.config.get("dest") %>/media/**/*.{png,jpg,gif,svg}','<%= grunt.config.get("dest") %>/static/**/*.{png,jpg,gif,svg}'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.{html,css}',
+      },
+      css: {
+        src: ['<%= grunt.config.get("dest") %>/static/css/**/*.css'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.html',
+      },
+      js: {
+        src: ['<%= grunt.config.get("dest") %>/static/js/**/*.js'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.html',
+      }
+    }
+
   });
 
   // Tasks
@@ -227,7 +247,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-config');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-notify');
-  grunt.loadNpmTasks("grunt-modernizr");
+  grunt.loadNpmTasks('grunt-modernizr');
+  grunt.loadNpmTasks('grunt-hashres');
   //grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Options
@@ -237,6 +258,6 @@ module.exports = function(grunt) {
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less:development', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'optim']);
-  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim']);
+  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'optim', 'hashres']);
+  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim', 'hashres']);
 };
