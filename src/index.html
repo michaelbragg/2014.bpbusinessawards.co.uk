@@ -33,9 +33,9 @@ sitemap:
     {% if post.video %}<div class="video__responsive">
     <canvas width="604" height="340"></canvas>
     <video width="604" height="340" controls poster="{{ post.video.poster }}">
-      <source src="{{ post.video.webm }}" type="video/webm;codecs=vp8,vorbis">
-      <source src="{{ post.video.mp4 }}" type="video/mp4;codecs=avc1.42E01E,mp4a.40.2">
-      <source src="{{ post.video.ogg }}" type="video/ogg;codecs=theora,vorbus">
+      <source src="{{ post.video.webm }}" type="video/webm;codecs='vp8,vorbis';">
+      <source src="{{ post.video.mp4 }}" type="video/mp4;codecs='avc1.42E01E,mp4a.40.2';">
+      <source src="{{ post.video.ogg }}" type="video/ogg;codecs='theora,vorbus';">
     </video>
     </div>{% elsif post.images %}<img class="image image__responsive" src="{{ site.media }}/news/{{ post.images.main }}" alt="">{% endif %}
 
