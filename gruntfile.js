@@ -149,10 +149,11 @@ module.exports = function(grunt) {
         globals: {
           console: true,
           module: true,
-          jQuery: true
+          jQuery: true,
+          Modernizr: true
         }
       },
-      src: ['gruntfile.js', '<%= grunt.config.get("dest") %>/static/js/*.js']
+      src: ['gruntfile.js', 'src/_includes/js/*.js']
     }
 
   // Optimise
@@ -247,7 +248,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-config');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-notify');
-  grunt.loadNpmTasks("grunt-modernizr");
+  grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-hashres');
   //grunt.loadNpmTasks('grunt-autoprefixer');
 
