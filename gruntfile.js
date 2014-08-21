@@ -86,13 +86,8 @@ module.exports = function(grunt) {
           paths: ['src/static/css']
         }
        ,files: {
-<<<<<<< HEAD
-        'src/static/css/global.1.3.0.css': ['src/_includes/less/global.less'],
-        'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
-=======
           'src/static/css/global.css': ['src/_includes/less/global.less'],
           'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
->>>>>>> stage
         }
       }
      ,production: {
@@ -101,13 +96,8 @@ module.exports = function(grunt) {
          ,paths: ['src/static/css']
         }
        ,files: {
-<<<<<<< HEAD
-        'src/static/css/global.1.3.0.css': ['src/_includes/less/global.less'],
-        'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
-=======
           'src/static/css/global.css': ['src/_includes/less/global.less'],
           'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
->>>>>>> stage
         }
       }
     }
