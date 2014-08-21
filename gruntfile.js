@@ -211,6 +211,26 @@ module.exports = function(grunt) {
       }
     }
 
+   ,hashres: {
+      options: {
+        encoding: 'utf8',
+        fileNameFormat: '${name}.${hash}.${ext}',
+        renameFiles: true
+      },
+      image: {
+        src: ['<%= grunt.config.get("dest") %>/media/**/*.{png,jpg,gif,svg}','<%= grunt.config.get("dest") %>/static/**/*.{png,jpg,gif,svg}'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.{html,css}',
+      },
+      css: {
+        src: ['<%= grunt.config.get("dest") %>/static/css/**/*.css'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.html',
+      },
+      js: {
+        src: ['<%= grunt.config.get("dest") %>/static/js/**/*.js'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.html',
+      }
+    }
+
   });
 
   // Tasks
@@ -228,6 +248,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks("grunt-modernizr");
+  grunt.loadNpmTasks('grunt-hashres');
   //grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Options
