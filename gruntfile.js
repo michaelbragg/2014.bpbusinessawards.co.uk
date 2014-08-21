@@ -198,13 +198,13 @@ module.exports = function(grunt) {
     dev: {
       files: [{
         expand: true,
-        cwd: 'src/static/gui',
+        cwd: '<%= grunt.config.get("dest") %>/static/gui',
         src: ['**/*.{png,jpg,gif,svg}'],
         dest: '<%= grunt.config.get("dest") %>/static/gui'
       },
       {
         expand: true,
-        cwd: 'src/media',
+        cwd: '<%= grunt.config.get("dest") %>/media',
         src: ['**/*.{png,jpg,gif,svg}'],
         dest: '<%= grunt.config.get("dest") %>/static/media'
       }]
