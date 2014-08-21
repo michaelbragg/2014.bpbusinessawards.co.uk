@@ -15,6 +15,8 @@ Website to support the 2014 Birmingham Post Business Awards
 
 ## Instructions
 
+These instructions expect that you have Ruby and NodeJS already installed.
+
 ### Setup Development Area
 
 ```
@@ -42,7 +44,7 @@ For testing and proofing we deploy to a staging server before deploying to produ
 grunt stage
 ```
 
-This opens the `./beta` folder ready for uploading.
+This deploys to the staging server [http://www.bpbusinessawards.co.uk/beta/](http://www.bpbusinessawards.co.uk/beta/).
 
 #### Production
 
