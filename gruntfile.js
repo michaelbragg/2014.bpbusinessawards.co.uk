@@ -83,21 +83,21 @@ module.exports = function(grunt) {
    ,less: {
       development: {
         options: {
-        paths: ['src/static/css']
+          paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.css': ['src/_includes/less/global.less'],
-        'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
+          'src/static/css/global.css': ['src/_includes/less/global.less'],
+          'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
      ,production: {
         options: {
-        compress: true
-       ,paths: ['src/static/css']
+          compress: true
+         ,paths: ['src/static/css']
         }
        ,files: {
-        'src/static/css/global.css': ['src/_includes/less/global.less'],
-        'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
+          'src/static/css/global.css': ['src/_includes/less/global.less'],
+          'src/_includes/css/preload.css': ['src/_includes/less/preload.less']
         }
       }
     }
@@ -157,59 +157,59 @@ module.exports = function(grunt) {
 
   // Optimise
 
- ,modernizr: {
-    dist: {
-      // [REQUIRED] Path to the build you're using for development.
-      "devFile" : "src/static/js/lib/modernizr-dev.js",
-      // [REQUIRED] Path to save out the built file.
-      "outputFile" : "<%= grunt.config.get('dest') %>/static/js/lib/modernizr.js",
-      // Based on default settings on http://modernizr.com/download/
-      "extra" : {
-        "shiv" : false,
-        "printshiv" : false,
-        "load" : true,
-        "mq" : false,
-        "cssclasses" : true
-      },
-      // Based on default settings on http://modernizr.com/download/
-      "extensibility" : {
-        "addtest" : false,
-        "prefixed" : false,
-        "teststyles" : false,
-        "testprops" : false,
-        "testallprops" : false,
-        "hasevents" : false,
-        "prefixes" : false,
-        "domprefixes" : false
-      },
-      "files" : {
-        "src": ['src/**/*.*']
-      },
-      // Define any tests you want to implicitly include.
-      "tests" : [],
-      "matchCommunityTests" : false,
+   ,modernizr: {
+      dist: {
+        // [REQUIRED] Path to the build you're using for development.
+        'devFile' : 'src/static/js/lib/modernizr-dev.js',
+        // [REQUIRED] Path to save out the built file.
+        'outputFile' : '<%= grunt.config.get("dest") %>/static/js/lib/modernizr.js',
+        // Based on default settings on http://modernizr.com/download/
+        'extra' : {
+          'shiv' : false,
+          'printshiv' : false,
+          'load' : true,
+          'mq' : false,
+          'cssclasses' : true
+        },
+        // Based on default settings on http://modernizr.com/download/
+        'extensibility' : {
+          'addtest' : false,
+          'prefixed' : false,
+          'teststyles' : false,
+          'testprops' : false,
+          'testallprops' : false,
+          'hasevents' : false,
+          'prefixes' : false,
+          'domprefixes' : false
+        },
+        'files' : {
+          'src': ['src/**/*.*']
+        },
+        // Define any tests you want to implicitly include.
+        'tests' : [],
+        'matchCommunityTests' : false,
+      }
     }
-  }
 
- ,imagemin: {
-    options: {
-      optimizationLevel: 3
-    },
-    dev: {
-      files: [{
-        expand: true,
-        cwd: '<%= grunt.config.get("dest") %>/static/gui',
-        src: ['**/*.{png,jpg,gif,svg}'],
-        dest: '<%= grunt.config.get("dest") %>/static/gui'
+   ,imagemin: {
+      options: {
+        optimizationLevel: 3
       },
-      {
-        expand: true,
-        cwd: '<%= grunt.config.get("dest") %>/media',
-        src: ['**/*.{png,jpg,gif,svg}'],
-        dest: '<%= grunt.config.get("dest") %>/static/media'
-      }]
+      dev: {
+        files: [{
+          expand: true,
+          cwd: '<%= grunt.config.get("dest") %>/static/gui',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: '<%= grunt.config.get("dest") %>/static/gui'
+        },
+        {
+          expand: true,
+          cwd: '<%= grunt.config.get("dest") %>/media',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: '<%= grunt.config.get("dest") %>/static/media'
+        }]
+      }
     }
-  }
 
    ,hashres: {
       options: {
@@ -258,6 +258,6 @@ module.exports = function(grunt) {
   grunt.registerTask('optim', ['imagemin']);
   grunt.registerTask('dev', ['config:dev', 'clean', 'less:development', 'shell:jekyll_dev', 'copy']);
   grunt.registerTask('serve', ['express', 'watch']);
-  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'optim', 'hashres']);
-  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'optim', 'hashres']);
+  grunt.registerTask('stage', ['config:stage', 'clean', 'less:production', 'shell:jekyll_stage', 'copy', 'hashres', 'optim']);
+  grunt.registerTask('deploy', ['config:deploy', 'clean', 'less:production', 'shell:jekyll_deploy', 'copy', /*'modernizr',*/ 'hashres', 'optim']);
 };
