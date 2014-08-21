@@ -152,7 +152,7 @@ module.exports = function(grunt) {
           jQuery: true
         }
       },
-      src: ['gruntfile.js', '<%= grunt.config.get("dest") %>/static/js/*.js']
+      src: ['gruntfile.js', 'src/_includes/js/*.js']
     }
 
   // Optimise
@@ -211,25 +211,25 @@ module.exports = function(grunt) {
     }
   }
 
- ,hashres: {
-    options: {
-      encoding: 'utf8',
-      fileNameFormat: '${name}.${hash}.${ext}',
-      renameFiles: true
-    },
-    image: {
-      src: ['<%= grunt.config.get("dest") %>/media/**/*.{png,jpg,gif,svg}','<%= grunt.config.get("dest") %>/static/**/*.{png,jpg,gif,svg}'],
-      dest: '<%= grunt.config.get("dest") %>/**/*.{html,css}',
-    },
-    css: {
-      src: ['<%= grunt.config.get("dest") %>/static/css/**/*.css'],
-      dest: '<%= grunt.config.get("dest") %>/**/*.html',
-    },
-    js: {
-      src: ['<%= grunt.config.get("dest") %>/static/js/**/*.js'],
-      dest: '<%= grunt.config.get("dest") %>/**/*.html',
+   ,hashres: {
+      options: {
+        encoding: 'utf8',
+        fileNameFormat: '${name}.${hash}.${ext}',
+        renameFiles: true
+      },
+      image: {
+        src: ['<%= grunt.config.get("dest") %>/media/**/*.{png,jpg,gif,svg}','<%= grunt.config.get("dest") %>/static/**/*.{png,jpg,gif,svg}'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.{html,css}',
+      },
+      css: {
+        src: ['<%= grunt.config.get("dest") %>/static/css/**/*.css'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.html',
+      },
+      js: {
+        src: ['<%= grunt.config.get("dest") %>/static/js/**/*.js'],
+        dest: '<%= grunt.config.get("dest") %>/**/*.html',
+      }
     }
-  }
 
   });
 
