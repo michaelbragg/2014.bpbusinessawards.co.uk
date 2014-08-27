@@ -23,24 +23,20 @@
 
 {% include bower_components/FitVids/jquery.fitvids.js %}
 
-{% include bower_components/FlipClock/compiled/flipclock.min.js %}
+{% include bower_components/mb-comingsoon/jquery.mb-comingsoon.min.js %}
 
 (function ( $ ) {
 
   $(document).ready(function() {
 
-    // Grab the current date
-    var currentDate = new Date(),
-    // Set the closing date
-        futureDate  = new Date('2014-09-26T15:00:00'),
-    // Calculate the difference in seconds between the future and current date
-        diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-
-    // Instantiate a coutdown FlipClock
-        clock = $('#js-countdown').FlipClock(diff, {
-          clockFace: 'DailyCounter',
-          countdown: true,
-          showSeconds: false
+    $('#js-countdown').mbComingsoon({
+            expiryDate: new Date(2014, 8, 26, 15),
+            localization: {
+              days: "days",
+              hours: "hours",
+              minutes: "minutes",
+              seconds: "seconds"
+            }
         });
 
   });
