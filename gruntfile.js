@@ -33,7 +33,7 @@ module.exports = function(grunt) {
   //  Build Site
 
    ,watch: {
-      files: ['src/**/*']
+      files: ['src/**/*', '!src/_includes/bower_components/**/*']
      ,tasks: ['dev']
      ,options: {
         livereload: true
