@@ -22,3 +22,23 @@
 {% include js/jquery.svgfallback.js %}
 
 {% include bower_components/FitVids/jquery.fitvids.js %}
+
+{% include bower_components/mb-comingsoon/jquery.mb-comingsoon.min.js %}
+
+(function ( $ ) {
+
+  $(document).ready(function() {
+
+    $('#js-countdown').mbComingsoon({
+            expiryDate: new Date(2014, 8, 26, 15),
+            localization: {
+              days: "days",
+              hours: "hours",
+              minutes: "minutes",
+              seconds: "seconds"
+            }
+        });
+
+  });
+
+}(jQuery));

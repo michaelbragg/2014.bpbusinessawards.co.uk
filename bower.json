@@ -20,6 +20,7 @@
     "possession": "https://github.com/michaelbragg/possession.git#develop",
     "jquery": "1.11.0",
     "respondJS": "1.4.2",
-    "FitVids": "~1.1.0"
+    "FitVids": "~1.1.0",
+    "mb-comingsoon": "https://github.com/magicbruno/mb-comingsoon.git#1.0.0"
   }
 }
