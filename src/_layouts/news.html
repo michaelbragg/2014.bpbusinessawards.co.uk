@@ -12,7 +12,7 @@ sponsors: true
     {% if page.video %}<div class="video__responsive">
     <canvas width="604" height="340"></canvas>
     <video width="604" height="340" controls poster="{{ page.video.poster }}">
-      <source src="{{ page.video.webm }}" type="video/webm;codecs=vp8,vorbis">
+      <source src="{{ page.video.webm }}" type="video/webm">
       <source src="{{ page.video.mp4 }}" type="video/mp4;codecs=avc1.42E01E,mp4a.40.2">
       <source src="{{ page.video.ogg }}" type="video/ogg;codecs=theora,vorbus">
     </video>
