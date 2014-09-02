@@ -38,7 +38,12 @@
 
   .gallery__item img {
     max-width: 100%;
-    height: inherit;
+  }
+
+//  Fixes SVG scale bug in IE9+
+
+  .gallery__item img[src$=".svg"] {
+    height: initial;
   }
 
   .lt-ie9 .gallery--image img {
