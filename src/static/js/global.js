@@ -31,7 +31,7 @@
 
     $('#js-countdown').mbComingsoon({
             // For fun reason we need to -1 the number of the month
-            expiryDate: new Date(2014, 8, 26, 17),
+            expiryDate: new Date(2014, 9, 3, 17),
             localization: {
               days: "days",
               hours: "hours",
